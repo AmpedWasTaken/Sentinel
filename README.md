@@ -33,10 +33,25 @@
 #### `slaves(string) int`
 - Returns the number of slave processes for a given string.
 
-### `gradient`
+### `colour`
 
-#### `marshal(string, int...) string`
-- Marshals the given string with integer values and returns a resulting string.
+#### `gradient(string, int...) string`
+- Gradient the given string with integer values and returns a resulting string.
+
+#### `gif(string, int) string`
+- Takes a pathway to a GIF file, resizes and displays the frames of the GIF in the terminal, and repeats the process for a specified number of loops.
+
+#### `img(string, int) void`
+- Takes an image file path as an argument, resizes the image to 80x24 pixels, converts it to colored ANSI, and writes the ANSI output to a writer.
+
+
+### `log`
+
+#### `telegram(string, string) bool`
+- Sends a message to a Telegram chat using the Telegram API. Requires the message and chat ID as parameters. Returns `true` if the message is sent successfully, otherwise `false`.
+
+#### `discord(string, string) bool`
+- Sends a log message to a Discord webhook with the specified message and webhook URL. Returns `true` if the message is sent successfully, otherwise `false`.
 
 ### `padding`
 
@@ -138,17 +153,14 @@
 
 ## New Functions
 
-### `ANSIGIF(string, int) void`
-- Takes a pathway to a GIF file, resizes and displays the frames of the GIF in the terminal, and repeats the process for a specified number of loops.
-
-### `ANSIIMG(string, int) void`
-- Takes an image file path as an argument, resizes the image to 80x24 pixels, converts it to colored ANSI, and writes the ANSI output to a writer.
-
-### `telegram(string, string) bool`
-- Sends a message to a Telegram chat using the Telegram API. Requires the message and chat ID as parameters. Returns `true` if the message is sent successfully, otherwise `false`.
-
-### `discord(string, string) bool`
-- Sends a log message to a Discord webhook with the specified message and webhook URL. Returns `true` if the message is sent successfully, otherwise `false`.
-
 ### `shake() void`
 - Shakes the terminal screen.
+
+### `header(string, string, string) string`
+- Centers the text, sets the background to the specified RGB color, and sets the text color to the specified RGB color.
+
+### `ipinfo(string) string`
+- Retrieves and displays information about the specified IP address. You can use {{lasttarget}} to get the last target's IP address.
+
+### `table(string, string...) string`
+- Displays a table with the specified headers and rows. first string is the table header, and the second string is the table rows. 3rd string is the table header. and so on.
